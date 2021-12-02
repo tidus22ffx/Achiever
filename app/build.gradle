@@ -40,6 +40,13 @@ android {
         kotlinCompilerExtensionVersion compose_version
         kotlinCompilerVersion '1.5.21'
     }
+
+    testOptions.unitTests.all {
+        testLogging {
+            events 'passed', 'failed', 'skipped', 'standardOut', 'standardError'
+        }
+    }
+
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
