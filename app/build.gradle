@@ -18,19 +18,10 @@ android {
             useSupportLibrary true
         }
     }
-    signingConfigs {
-        release {
-            storeFile file(System.getenv("ICEFALL_KEYSTORE_LOCATION"))
-            storePassword System.getenv("ICEFALL_KEYSTORE_PASSWORD")
-            keyAlias System.getenv("ICEFALL_KEYSTORE_ALIAS")
-            keyPassword System.getenv("ICEFALL_ALIAS_PASSWORD")
-        }
-    }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {
